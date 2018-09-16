@@ -9,12 +9,10 @@
 import Cocoa
 import AVFoundation
 
-class TouchBarFarjan {
+class AudioPlayer {
     let audioPlayer: AVAudioPlayer
-
+    
     init() {
-        print("\(Bundle.main.bundlePath)")
-        
         if let trackUrl = Bundle.main.url(forResource: "farjan", withExtension: "m4a") {
             guard let audioPlayer = try? AVAudioPlayer(contentsOf: trackUrl) else {
                 abort()
@@ -25,7 +23,7 @@ class TouchBarFarjan {
         } else {
             abort()
         }
-        
+
         self.audioPlayer.prepareToPlay()
     }
     

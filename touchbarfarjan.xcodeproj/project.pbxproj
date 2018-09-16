@@ -10,8 +10,12 @@
 		9065EC3A214E71A000D911E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065EC39214E71A000D911E2 /* AppDelegate.swift */; };
 		9065EC3C214E71A100D911E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9065EC3B214E71A100D911E2 /* Assets.xcassets */; };
 		9065EC3F214E71A100D911E2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9065EC3D214E71A100D911E2 /* MainMenu.xib */; };
-		9065EC48214E72C900D911E2 /* TouchBarFarjan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065EC47214E72C900D911E2 /* TouchBarFarjan.swift */; };
+		9065EC48214E72C900D911E2 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065EC47214E72C900D911E2 /* AudioPlayer.swift */; };
 		9065EC4A214E74F700D911E2 /* farjan.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9065EC49214E735A00D911E2 /* farjan.m4a */; };
+		9065EC4C214E766700D911E2 /* TouchBarFarjanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065EC4B214E766700D911E2 /* TouchBarFarjanView.swift */; };
+		9065EC4E214E7F7A00D911E2 /* FarjanWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065EC4D214E7F7A00D911E2 /* FarjanWindow.swift */; };
+		9065EC50214E813300D911E2 /* paatti.dae in Resources */ = {isa = PBXBuildFile; fileRef = 9065EC4F214E813300D911E2 /* paatti.dae */; };
+		9065EC52214E826A00D911E2 /* paatti.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9065EC51214E826A00D911E2 /* paatti.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +25,12 @@
 		9065EC3E214E71A100D911E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9065EC40214E71A100D911E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9065EC41214E71A100D911E2 /* touchbarfarjan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = touchbarfarjan.entitlements; sourceTree = "<group>"; };
-		9065EC47214E72C900D911E2 /* TouchBarFarjan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarFarjan.swift; sourceTree = "<group>"; };
+		9065EC47214E72C900D911E2 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		9065EC49214E735A00D911E2 /* farjan.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = farjan.m4a; sourceTree = "<group>"; };
+		9065EC4B214E766700D911E2 /* TouchBarFarjanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarFarjanView.swift; sourceTree = "<group>"; };
+		9065EC4D214E7F7A00D911E2 /* FarjanWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarjanWindow.swift; sourceTree = "<group>"; };
+		9065EC4F214E813300D911E2 /* paatti.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = paatti.dae; sourceTree = "<group>"; };
+		9065EC51214E826A00D911E2 /* paatti.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paatti.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +64,16 @@
 			isa = PBXGroup;
 			children = (
 				9065EC49214E735A00D911E2 /* farjan.m4a */,
+				9065EC4F214E813300D911E2 /* paatti.dae */,
+				9065EC51214E826A00D911E2 /* paatti.jpg */,
 				9065EC39214E71A000D911E2 /* AppDelegate.swift */,
+				9065EC4D214E7F7A00D911E2 /* FarjanWindow.swift */,
 				9065EC3B214E71A100D911E2 /* Assets.xcassets */,
 				9065EC3D214E71A100D911E2 /* MainMenu.xib */,
 				9065EC40214E71A100D911E2 /* Info.plist */,
 				9065EC41214E71A100D911E2 /* touchbarfarjan.entitlements */,
-				9065EC47214E72C900D911E2 /* TouchBarFarjan.swift */,
+				9065EC47214E72C900D911E2 /* AudioPlayer.swift */,
+				9065EC4B214E766700D911E2 /* TouchBarFarjanView.swift */,
 			);
 			path = touchbarfarjan;
 			sourceTree = "<group>";
@@ -125,6 +137,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9065EC3C214E71A100D911E2 /* Assets.xcassets in Resources */,
+				9065EC52214E826A00D911E2 /* paatti.jpg in Resources */,
+				9065EC50214E813300D911E2 /* paatti.dae in Resources */,
 				9065EC4A214E74F700D911E2 /* farjan.m4a in Resources */,
 				9065EC3F214E71A100D911E2 /* MainMenu.xib in Resources */,
 			);
@@ -138,7 +152,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9065EC3A214E71A000D911E2 /* AppDelegate.swift in Sources */,
-				9065EC48214E72C900D911E2 /* TouchBarFarjan.swift in Sources */,
+				9065EC48214E72C900D911E2 /* AudioPlayer.swift in Sources */,
+				9065EC4C214E766700D911E2 /* TouchBarFarjanView.swift in Sources */,
+				9065EC4E214E7F7A00D911E2 /* FarjanWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

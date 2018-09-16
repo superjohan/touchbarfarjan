@@ -10,12 +10,13 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    @IBOutlet weak var window: NSWindow!
+    @IBOutlet weak var window: FarjanWindow!
 
-    let demo = TouchBarFarjan()
+    var audioPlayer: AudioPlayer?
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        self.demo.start()
+        self.audioPlayer = AudioPlayer()
+        self.audioPlayer?.start()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
