@@ -10,6 +10,8 @@
 		9065EC3A214E71A000D911E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065EC39214E71A000D911E2 /* AppDelegate.swift */; };
 		9065EC3C214E71A100D911E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9065EC3B214E71A100D911E2 /* Assets.xcassets */; };
 		9065EC3F214E71A100D911E2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9065EC3D214E71A100D911E2 /* MainMenu.xib */; };
+		9065EC48214E72C900D911E2 /* TouchBarFarjan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065EC47214E72C900D911E2 /* TouchBarFarjan.swift */; };
+		9065EC4A214E74F700D911E2 /* farjan.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9065EC49214E735A00D911E2 /* farjan.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		9065EC3E214E71A100D911E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9065EC40214E71A100D911E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9065EC41214E71A100D911E2 /* touchbarfarjan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = touchbarfarjan.entitlements; sourceTree = "<group>"; };
+		9065EC47214E72C900D911E2 /* TouchBarFarjan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarFarjan.swift; sourceTree = "<group>"; };
+		9065EC49214E735A00D911E2 /* farjan.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = farjan.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,11 +55,13 @@
 		9065EC38214E71A000D911E2 /* touchbarfarjan */ = {
 			isa = PBXGroup;
 			children = (
+				9065EC49214E735A00D911E2 /* farjan.m4a */,
 				9065EC39214E71A000D911E2 /* AppDelegate.swift */,
 				9065EC3B214E71A100D911E2 /* Assets.xcassets */,
 				9065EC3D214E71A100D911E2 /* MainMenu.xib */,
 				9065EC40214E71A100D911E2 /* Info.plist */,
 				9065EC41214E71A100D911E2 /* touchbarfarjan.entitlements */,
+				9065EC47214E72C900D911E2 /* TouchBarFarjan.swift */,
 			);
 			path = touchbarfarjan;
 			sourceTree = "<group>";
@@ -119,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9065EC3C214E71A100D911E2 /* Assets.xcassets in Resources */,
+				9065EC4A214E74F700D911E2 /* farjan.m4a in Resources */,
 				9065EC3F214E71A100D911E2 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9065EC3A214E71A000D911E2 /* AppDelegate.swift in Sources */,
+				9065EC48214E72C900D911E2 /* TouchBarFarjan.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
