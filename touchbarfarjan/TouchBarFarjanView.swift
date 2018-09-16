@@ -8,11 +8,13 @@
 
 import Cocoa
 import SceneKit
+import QuartzCore
 
 class TouchBarFarjanView: NSView {
     let sceneView = SCNView()
     let camera = SCNNode()
-
+    let scroller = NSTextField()
+    
     override init(frame frameRect: NSRect) {
         let camera = SCNCamera()
         camera.zFar = 600
@@ -24,7 +26,21 @@ class TouchBarFarjanView: NSView {
         self.sceneView.autoresizingMask = [ .width, .height ]
         self.wantsLayer = true
         
+        self.scroller.isBezeled = false
+        self.scroller.drawsBackground = false
+        self.scroller.isEditable = false
+        self.scroller.isSelectable = false
+        self.scroller.stringValue = "Welcome to Jumalauta 18 Years party 24.-26.8.2018 at Hauho in (as it turned out) quite rainy Finland! We have cabins and good times! If you're in Sweden, take the dang titular finlandsfärjan/time machine!! Greets to everyone at Skrolli Party 2018 and everyone who's been at the Jumalauta party before! See you there this year and next year! This remake was made by Ylvaes, Tohtori Kannabispiikki, and Paasikivi-Kekkosen Linja. The 2006 original was made by Anteeksi, Maitotuote, Saksan Perussanasto, and Ylvaes."
+        self.scroller.font = NSFont.boldSystemFont(ofSize: 12)
+        self.scroller.sizeToFit()
+        self.scroller.textColor = NSColor.white
+        self.scroller.shadow = NSShadow()
+        self.scroller.shadow?.shadowColor = NSColor.black
+        self.scroller.shadow?.shadowOffset = NSSize(width: 1, height: 1)
+        self.scroller.isHidden = true
+
         self.addSubview(self.sceneView)
+        self.addSubview(self.scroller)
     }
     
     required init?(coder decoder: NSCoder) {
@@ -34,6 +50,24 @@ class TouchBarFarjanView: NSView {
     func setup() {
         self.sceneView.scene = createScene()
         self.sceneView.frame = self.bounds
+
+        perform(#selector(startScroller), with: nil, afterDelay: 1)
+    }
+    
+    @objc private func startScroller() {
+        self.scroller.isHidden = false
+        self.scroller.frame.origin.x = self.bounds.width
+
+        perform(#selector(startScroller2), with: nil, afterDelay: 0)
+    }
+
+    @objc private func startScroller2() {
+        NSAnimationContext.runAnimationGroup({ _ in
+            NSAnimationContext.current.duration = 60.0
+            NSAnimationContext.current.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+            
+            self.scroller.animator().frame = CGRect(x: -self.scroller.bounds.size.width, y: self.bounds.size.height - self.scroller.bounds.size.height - 15, width: self.scroller.bounds.size.width, height: self.scroller.bounds.size.height)
+        }, completionHandler: nil)
     }
     
     fileprivate func createScene() -> SCNScene {
@@ -52,14 +86,14 @@ class TouchBarFarjanView: NSView {
         sunNode.position = SCNVector3Make(36, 12, -10)
         scene.rootNode.addChildNode(sunNode)
         
-        let ground = SCNBox(width: 800, height: 50, length: 20, chamferRadius: 10)
+        let ground = SCNBox(width: 1000, height: 50, length: 20, chamferRadius: 10)
         ground.firstMaterial?.diffuse.contents = NSColor.green
         let groundNode = SCNNode(geometry: ground)
         groundNode.position = SCNVector3Make(0, -22, -15)
         scene.rootNode.addChildNode(groundNode)
         addRotateMoveActions(node: groundNode, moveBy: SCNVector3Make(0, 1, 0), moveDuration: 6, rotateBy: SCNVector3Make(0, 0, 0), rotateDuration: 7)
         
-        let water = SCNBox(width: 800, height: 50, length: 20, chamferRadius: 10)
+        let water = SCNBox(width: 1000, height: 50, length: 20, chamferRadius: 10)
         water.firstMaterial?.diffuse.contents = NSColor(red: 80.0 / 255.0, green: 80.0 / 255.0, blue: 1, alpha: 0.95)
         let waterNode = SCNNode(geometry: water)
         waterNode.position = SCNVector3Make(0, -31, 0)
